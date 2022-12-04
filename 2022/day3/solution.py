@@ -1,12 +1,12 @@
 with open("input.txt", "r") as file:
     data = file.readlines()
     data =[line.rstrip() for line in data]
-priority = lambda ascii, char: ascii - 96 if char.islower() else ascii - 38
+priority = [chr(i + j) for i in [97, 65] for j in range(26)]
 def part_one():
     intersections = [(set(line[:len(line)//2]) & set(line[len(line)//2:])).pop() for line in data]
     total = 0
     for intersection in intersections:
-        total += priority(ord(intersection), intersection)
+        total += priority.index(intersection) + 1
     return total
 def part_two():
     def batch(iterable, n=3):
@@ -17,7 +17,7 @@ def part_two():
     total = 0
     for group in batch(lines):
         common = (group[0] & group[1] & group[2]).pop()
-        total += priority(ord(common), common)
+        total += priority.index(common) + 1
     return total
 print(f"part one: {part_one()}")  
 print(f"part two: {part_two()}")
