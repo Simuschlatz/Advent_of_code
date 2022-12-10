@@ -9,8 +9,7 @@ shapes = "XYZ"
 play_points = lambda shape: shapes.index(shape) + 1
 
 with open("input.txt", "r") as file:
-    data = file.readlines()
-    data = [line.rstrip().replace(" ", "") for line in data]
+    data = [line.rstrip().replace(" ", "") for line in file.readlines()]
 
 def part_one():
     total_score = 0

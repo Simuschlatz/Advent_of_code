@@ -13,4 +13,4 @@ num_overlaps = 0
 for pair in data:
     contained += is_contained(*pair)
     num_overlaps += overlaps(*pair)
-print(f"part one: {contained} \npart two: {num_overlaps}")
+print(f"part one: {contained}", f"part two: {num_overlaps}", sep="\n")

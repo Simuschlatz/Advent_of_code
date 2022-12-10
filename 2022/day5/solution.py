@@ -19,4 +19,4 @@ def solution(part):
         s[to_idx] = s[from_idx][:n] + s[to_idx] if part - 1 else s[from_idx][:n][::-1] + s[to_idx]
         s[from_idx] = s[from_idx][n:]
     return "".join([stack[0] if len(stack) else "" for stack in s])
-print(f"part one: {solution(1)}\npart two: {solution(2)}")
+print(f"part one: {solution(1)}", "part two: {solution(2)}", sep="\n")
